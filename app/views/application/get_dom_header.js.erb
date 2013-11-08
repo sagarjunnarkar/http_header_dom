@@ -1,2 +1,4 @@
+$("#http_header").empty();
+$("#dom").empty();
 $("#http_header").append("<%= @agent.page.header %>");
-$("#dom").html("<%#= @agent.page.body %>");
+$("#dom").html("<%= escape_javascript(@agent.page.body.force_encoding("UTF-8")) %>");
