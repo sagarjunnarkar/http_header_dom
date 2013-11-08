@@ -1,6 +1,11 @@
 <%= form_tag(test_path, :remote => true) do %>
 <%= text_field_tag :website, "http://www.toolsberry.com" %>
-<%= submit_tag "Enter To Win" %>
+<%= submit_tag "watch header and DOM" %>
 <% end %>
-<div id="http_header"></div>
+<div>
+	<table>
+		<tr id="http_header">
+		</tr>
+	</table>
+</div>
 <div id="dom"></div>

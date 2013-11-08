@@ -1,4 +1,6 @@
 $("#http_header").empty();
 $("#dom").empty();
-$("#http_header").append("<%= @agent.page.header %>");
-$("#dom").html("<%= escape_javascript(@agent.page.body.force_encoding("UTF-8")) %>");
+<% @agent.page.header.each{|header| %>
+$("#http_header").append("<tr><td><%=escape_javascript(header[0])%></td> <td><%=escape_javascript(header[1])%></td></tr>");
+<%}%>
+$("#dom").append("<%= escape_javascript(@agent.page.body.force_encoding("UTF-8")) %>");
