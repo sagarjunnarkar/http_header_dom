@@ -3,4 +3,4 @@ $("#dom").empty();
 <% @agent.page.header.each{|header| %>
 $("#http_header").append("<tr><td><%=escape_javascript(header[0])%></td> <td><%=escape_javascript(header[1])%></td></tr>");
 <%}%>
-$("#dom").append("<%= escape_javascript(@agent.page.body.force_encoding("UTF-8")) %>");
+$("#dom").append("<%= escape_javascript(@agent.page.body.encode('utf-8', 'iso-8859-1')) %>");
